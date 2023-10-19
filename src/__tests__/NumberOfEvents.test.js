@@ -7,7 +7,9 @@ describe("<NumberOfEvents /> component", () => {
   //
   let NumberOfEventsComponent;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(
+      <NumberOfEvents setCurrentNOE={() => {}} />
+    );
   });
 
   //
@@ -27,11 +29,17 @@ describe("<NumberOfEvents /> component", () => {
   });
 
   //
-  test("value of textbox component changes when user types in it", async () => {
-    const textBox = NumberOfEventsComponent.queryByRole("textbox");
+  // test("value of textbox component changes when user types in it", async () => {
+  //   const textBox = NumberOfEventsComponent.queryByRole("textbox");
 
-    const user = userEvent.setup();
-    await user.type(textBox, "{backspace}{backspace}10");
-    expect(textBox.value).toBe("10");
+  //   const user = userEvent.setup();
+  //   await user.type(textBox, "{backspace}{backspace}10");
+  //   expect(textBox.value).toBe("10");
+  // });
+  //
+  test("updates number of events when user types", async () => {
+    const input = NumberOfEventsComponent.queryByRole("textbox");
+    await userEvent.type(input, "{backspace}{backspace}10");
+    expect(input).toHaveValue("10");
   });
 });
