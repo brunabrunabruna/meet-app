@@ -2,7 +2,7 @@
 
 import { getDefaultNormalizer, render } from "@testing-library/react";
 import "../mock-data";
-import Event from "../Event";
+import Event from "../components/Event";
 import { getEvents } from "../api";
 import userEvent from "@testing-library/user-event";
 //
