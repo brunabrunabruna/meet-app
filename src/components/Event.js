@@ -23,6 +23,7 @@ const Event = ({ event }) => {
       <div className="details-btn">
         {isDetailsOpen ? (
           <button
+            className="hide-details"
             onClick={() => {
               setIsDetailsOpen(false);
             }}
@@ -31,6 +32,7 @@ const Event = ({ event }) => {
           </button>
         ) : (
           <button
+            className="show-details"
             onClick={() => {
               setIsDetailsOpen(true);
             }}

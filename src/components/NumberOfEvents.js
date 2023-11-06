@@ -11,6 +11,7 @@ const NumberOfEvents = ({ setCurrentNOE }) => {
   return (
     <div id="number-of-events">
       <input
+        data-testid="event-number-imput"
         type="text"
         className="event-number"
         // placeholder="32"
