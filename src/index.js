@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+
 import * as atatus from "atatus-spa";
 atatus.config("23e581aec05e41cebb68b8e08a086033").install();
 
@@ -24,4 +25,5 @@ serviceWorkerRegistration.unregister();
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-atatus.notify(new Error("Test Atatus Setup"));
+//test error to see if atatus was successfully integrated
+// atatus.notify(new Error("Test Atatus Setup"));
