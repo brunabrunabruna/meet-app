@@ -6,12 +6,15 @@ import { useEffect, useState } from "react";
 
 import { extractLocations, getEvents } from "./api";
 
+import { ErrorAlert, InfoAlert } from "./components/Alert";
+
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
   const [events, setEvents] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
-
+  const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
   useEffect(() => {
     fetchData();
   }, [currentCity, currentNOE]);
@@ -28,8 +31,20 @@ const App = () => {
 
   return (
     <div className="App">
-      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <div className="alerts-container">
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {ErrorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+      </div>
+
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+      />
+      <NumberOfEvents
+        setCurrentNOE={setCurrentNOE}
+        setErrorAlert={setErrorAlert}
+      />
       <EventList events={events} />
     </div>
   );
