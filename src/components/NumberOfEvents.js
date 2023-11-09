@@ -5,15 +5,16 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
-
+    console.log("THE VALUE IS:", value);
+    setCurrentNOE(value);
     let errorText;
     if (isNaN(value) || value <= 0) {
       errorText = "only positive number are valid";
       setErrorAlert(errorText);
     } else {
-      setCurrentNOE(value);
       errorText = "";
       setErrorAlert(errorText);
+      setCurrentNOE(value);
     }
   };
 

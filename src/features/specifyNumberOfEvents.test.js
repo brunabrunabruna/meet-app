@@ -25,7 +25,7 @@ defineFeature(feature, (test) => {
 
       await waitFor(() => {
         eventList = within(AppDOM).queryAllByRole("listitem");
-        console.log(eventList);
+        // console.log(eventList);
 
         expect(eventList[0]).toBeTruthy();
       });
@@ -52,7 +52,7 @@ defineFeature(feature, (test) => {
 
       await waitFor(() => {
         eventList = within(AppDOM).queryAllByRole("listitem");
-        console.log(eventList);
+        // console.log(eventList);
 
         expect(eventList[0]).toBeTruthy();
       });
