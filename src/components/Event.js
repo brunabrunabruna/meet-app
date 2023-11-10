@@ -11,11 +11,19 @@ const Event = ({ event }) => {
       <div>{event.location}</div>
       {/* details are hidden bu default */}
       {isDetailsOpen ? (
-        <details open={true} className="detailsOpened">
+        <details
+          open={true}
+          className="detailsOpened"
+          style={{ listStyle: "none" }}
+        >
           {event.description}
         </details>
       ) : (
-        <details open={false} className="detailsClosed">
+        <details
+          open={false}
+          className="detailsClosed"
+          style={{ listStyle: "none" }}
+        >
           {event.description}
         </details>
       )}
