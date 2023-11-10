@@ -16,12 +16,10 @@ const App = () => {
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
   const [warningAlert, setWarningAlert] = useState("");
-  useEffect(() => {
-    fetchData();
-  }, [currentCity, currentNOE]);
 
-  //check to render warning alert
   useEffect(() => {
+    //check to render warning alert
+
     if (navigator.onLine) {
       setWarningAlert("");
     } else {
