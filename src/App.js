@@ -46,7 +46,12 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-
+      <div className="title-box">
+        <p className="title">Meet App 📍</p>
+        <p className="subtitle">
+          Search tech events near you using Careerfoundrys calendar!
+        </p>
+      </div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}

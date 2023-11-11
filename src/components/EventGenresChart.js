@@ -85,19 +85,28 @@ const EventGenresChart = ({ events }) => {
       </text>
     ) : null;
   };
+  const colors = ["#DDC4DD", "#9F7CCB", "#A997DF", "#4F517D", "#1E1A3B"];
   return (
-    <ResponsiveContainer width="99%" height={400}>
-      <PieChart>
-        <Pie
-          data={data}
-          dataKey="value"
-          fill="#8884d8"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={130}
-        />
-      </PieChart>
-    </ResponsiveContainer>
+    <div>
+      <p className="graph-title">Type of Event</p>
+
+      <ResponsiveContainer width="99%" height={400}>
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="value"
+            fill="#9F7CCB"
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={130}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

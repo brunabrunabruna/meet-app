@@ -4,27 +4,31 @@ import mockData from "../mock-data";
 
 const Event = ({ event }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+
+  const isoDateString = event.created;
+  const isoDate = new Date(isoDateString);
+
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const readableDate = isoDate.toLocaleString(undefined, options);
+
+  // console.log(readableDate);
   return (
     <li className="event">
       <div className="event-title">{event.summary}</div>
-      <div>{event.created}</div>
-      <div>{event.location}</div>
+      <div className="event-infos">
+        <div>{readableDate}</div>
+        <div>{event.location}</div>
+      </div>
       {/* details are hidden bu default */}
       {isDetailsOpen ? (
-        <details
-          open={true}
-          className="detailsOpened"
-          style={{ listStyle: "none" }}
-        >
-          {event.description}
+        <details open={true} className="detailsOpened">
+          <summary> </summary>
+          <p> {event.description} </p>
         </details>
       ) : (
-        <details
-          open={false}
-          className="detailsClosed"
-          style={{ listStyle: "none" }}
-        >
-          {event.description}
+        <details open={false} className="detailsClosed">
+          <summary> </summary>
+          <p> {event.description}</p>
         </details>
       )}
 

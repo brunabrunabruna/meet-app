@@ -20,6 +20,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
   return (
     <div id="number-of-events">
+      <p>Number of Events:</p>
       <input
         data-testid="event-number-imput"
         type="text"
