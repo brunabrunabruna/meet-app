@@ -6,7 +6,7 @@ Serverless
 
 Going serverless for this project will help it be set up faster, saving a lot of time, as well as enabling it to easily scale in the future, if necessary. My serverless functions implementation will be made using AWS Lambda, in combination with an external Google Calendar API, and will also handle the OAuth verification.
 
-!(screenshot.png)
+![meet app screenshot](/screenshot.png)
 
 Key Features:
 ● Filter Events by City.
