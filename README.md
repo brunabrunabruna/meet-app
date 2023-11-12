@@ -1,6 +1,6 @@
 # Meet App 📍
 
-Objective
+## Objective
 
 To build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 Serverless
@@ -9,7 +9,8 @@ Going serverless for this project will help it be set up faster, saving a lot of
 
 ![meet app screenshot](/screenshot.png)
 
-Key Features:
+## Key Features:
+
 ● Filter Events by City.
 ● Show/Hide Event Details.
 ● Specify Number of Events.
@@ -17,15 +18,16 @@ Key Features:
 ● Add an App Shortcut to the Home Screen.
 ● Display Charts Visualizing Event Details.
 
-Technologies:
+## Technologies:
+
 ● AWS
 ● React
 ● TDD technique
 ● Google Calendar API
 
-live app link: https://brunabrunabruna.github.io/meet-app/
+## live app link: https://brunabrunabruna.github.io/meet-app/
 
-Features and User Stories
+## Features and User Stories
 
 FEATURE 1: FILTER EVENTS BY CITY As a user, I should be able to filter events by city, so that I can see the events happening in the city I am interested in.
 
